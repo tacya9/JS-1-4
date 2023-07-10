@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 4.1.3
+У нас есть объект, в котором хранятся зарплаты нашей команды:
+
+let salaries = {
+John: 100,
+Ann: 160,
+Pete: 130
+}
+
+Напишите код для суммирования всех зарплат и сохраните результат в переменной sum. Должно получиться 390.
+Если объект salaries пуст, то результат должен быть 0.
+<script>
+	function calcSum(obj) {
+		let sum = 0;
+
+		for (let key in obj) {
+			sum += obj[key];
+		}
+
+		return sum;
+	}
+
+	const salaries = {
+		John: 100,
+		Ann: 160,
+		Pete: 130
+	}
+	const sum = calcSum(salaries);
+</script>
+</body>
+</html>
