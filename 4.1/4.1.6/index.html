@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 4.1.6
+создать функцию, которая принимает 2 числа и находит сумму всех чисел из диапазона между первым и вторым переданным
+числом. А потом возвращает объект с тремя свойствами: начальное число, конечное число, найденная сумма
+<script>
+	function calcSum(num1, num2) {
+		let sum = 0;
+
+		for (let i = num1; i <= num2; i++) {
+			sum += i;
+		}
+
+		return sum;
+	}
+	function getObj(num1, num2) {
+		let variable = num1;
+
+		if (variable > num2) {
+			num1 = num2;
+			num2 = variable
+		}
+
+		const objNum = {
+			'начальное число': num1,
+			'конечное число': num2,
+			'найденная сумма': calcSum(num1, num2)
+		}
+
+		return objNum;
+	}
+</script>
+</body>
+</html>
