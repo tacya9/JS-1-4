@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 4.1.7
+Имеется глобальный объект с людьми разного возраста:
+{
+'Вася': 26,
+'Коля': 12,
+'Настя': 43,
+'Ира': 18,
+'Миша': 9,
+}
+
+Создать первую функцию, которая принимает объект с людьми разного возраста и
+возвращает объект с двумя свойствами: взрослые, дети. А в этих свойствах
+в виде строки перечисленны имена людей через запятую, взрослые к взрослым, а дети к детям.
+Причем, если в переданном объекте будет хотябы один раз не числовое значение, тогда
+функция должна вернуть false.
+
+Потом создать вторую функцию, которая будет выводить алерт с подобным текстом (сортировка имен не важна):
+"Дети - Коля, Миша. Взрослые - Вася, Настя, Ира"
+А если объект с именами оказался с ошибкой, тогда вывести алерт: "Ошибка в объекте с именами"
+<script>
+	function getNewObj(obj) {
+		const adults = 'Взрослые';
+
+		let peopleAgeObj = {
+			'Дети': '', // first approach
+			[adults]: '' // second approach
+		};
+
+		for (let key in obj) {
+			if (typeof obj[key] === 'number') {
+				if (obj[key] >= 18) {
+					peopleAgeObj[adults] += (peopleAgeObj[adults]) ? `, ${key}` : key;
+				} else {
+					peopleAgeObj['Дети'] += (peopleAgeObj['Дети']) ? `, ${key}` : key;
+				}
+			} else {
+				peopleAgeObj = false;
+			}
+		}
+
+		return (peopleAgeObj[adults]) ? peopleAgeObj : false;
+	}
+
+	function showMessage(obj) {
+		if (obj) {
+			let variable = '';
+
+			for (let key in obj) {
+				variable += (variable) ? `${key} - ${obj[key]}` : `${key} - ${obj[key]}. `;
+			}
+
+			alert(variable);
+		} else {
+			alert('Ошибка в объекте с именами');
+		}
+	}
+
+	const obj = {
+		'Вася': 26,
+		'Коля': 12,
+		'Настя': 43,
+		'Ира': 18,
+		'Миша': 9,
+	}
+
+	console.log(getNewObj(obj));
+	showMessage(getNewObj(obj))
+</script>
+</body>
+</html>
