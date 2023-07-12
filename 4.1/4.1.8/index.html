@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 4.1.8
+Создать функцию, которая будет возвращать обьект состоящий из свойств со значениями двух обьектов переданных этой
+функцией.
+Но в новом объекте все названия свойств должны начинаться с "new-"
+Если в функцию вместо одного обьекта передали что-то другое, то функция вернет новый объект со свойствами переданного
+обьект.
+А если в функцию передали не обьекты, тогда возвращает фолс.
+<script>
+	function getNewObj(obj1, obj2) {
+		const newObj = {};
+
+		let isObj1 = (typeof obj1 === 'object');
+		let isObj2 = (typeof obj2 === 'object');
+
+		if (isObj1 && isObj2) {
+			for (let key in obj1) {
+				newObj[`new-${key}`] = obj1[key];
+			}
+
+			for (let key in obj2) {
+				newObj[`new-${key}`] = obj2[key];
+			}
+		} else if (isObj1 || isObj2) {
+			if (isObj1) {
+				for (let key in obj1) {
+					newObj[`new-${key}`] = obj1[key];
+				}
+			} else {
+				for (let key in obj2) {
+					newObj[`new-${key}`] = obj2[key];
+				}
+			}
+		}
+
+		return (isObj1 || isObj2) ? newObj : false;
+	}
+</script>
+</body>
+</html>
