@@ -19,17 +19,17 @@
 		return sum;
 	}
 	function getObj(num1, num2) {
-		let variable = num1;
+		const tempNum = num1;
 
-		if (variable > num2) {
+		if (tempNum > num2) {
 			num1 = num2;
-			num2 = variable
+			num2 = tempNum;
 		}
 
 		const objNum = {
-			'начальное число': num1,
-			'конечное число': num2,
-			'найденная сумма': calcSum(num1, num2)
+			startNumber: num1,
+			finishNumber: num2,
+			foundAmount: calcSum(num1, num2)
 		}
 
 		return objNum;
