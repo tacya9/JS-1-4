@@ -11,9 +11,7 @@
 <script>
 	function getArithmeticProgression(num) {
 		let sum = 0;
-		let number = num;
-
-		number = Math.abs(number);
+		let number = Math.abs(num);
 
 		for (let i = 1; i <= number; i++) {
 			sum += i;
@@ -21,26 +19,24 @@
 
 		return (num > 0) ? sum : -sum;
 	}
+
 	function getGeometricProgression(num) {
 		let sum = 1;
-		let number = num;
-
-		number = Math.abs(number);
+		let number = Math.abs(num);
 
 		for (let i = 1; i <= number; i++) {
 			sum *= i;
 		}
 
-		if (num < 0) {
-			sum = (num % 2 === 0) ? sum : -sum;
-		}
+		sum = (num > 0 || (num < 0 && num % 2 === 0)) ? sum : -sum;
 
 		return sum;
 	}
+
 	function getObj(num) {
 		const objNumber = {
-			'арифметическая прогрессия': getArithmeticProgression(num),
-			'геометрическая прогрессия': getGeometricProgression(num)
+			'arithmetic progression': getArithmeticProgression(num),
+			'geometric progression': getGeometricProgression(num)
 		}
 
 		return objNumber;
