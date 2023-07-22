@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 4.1.12
+Создай 2 объекта с одинаковыми названиями свойств. У каждого объекта будет по 4 свойства с разными числами.
+Создай функцию, которая будет принимать 2 объекта и перемножать их. Перемножать их будет таким образом:
+будет брать каждое свойство у одного и второго объекта, перемножать их значения и записывать их в
+новый объект в свойство с таким же названием. И так перемножить все свойства. А полученный новый объект функция
+будет возращать.
+Создать функцию, которая будет обнулять объект и возращать его (все свойства ничего не содержат)
+<script>
+	function getNewObj(obj1, obj2) {
+		const newObj = {};
+
+		for (let key in obj1) {
+			newObj[key] = obj1[key];
+		}
+
+		for (let key in obj2) {
+			newObj[key] *= obj2[key];
+		}
+
+		return newObj;
+	}
+
+	function getResetObj(obj) {
+		for (let key in obj) {
+			obj[key] = null;
+		}
+
+		return obj;
+	}
+
+	const obj1 = {
+		num1: 1,
+		num2: 2,
+		num3: 3,
+		num4: 4
+	}
+	const obj2 = {
+		num1: 4,
+		num2: 3,
+		num3: 2,
+		num4: 1
+	}
+</script>
+</body>
+</html>
