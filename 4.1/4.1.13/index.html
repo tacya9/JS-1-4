@@ -12,18 +12,10 @@
 Например, мы в эту функцию передали вторым значением true, тогда функцию вернут переданный объект
 с новым свойством booleanValue: true.
 <script>
-	function createNewAttribute(obj, variable) {
-		switch (typeof variable) {
-			case 'number':
-				obj['numberValue'] = variable;
-				break;
-			case 'string':
-				obj['stringValue'] = variable;
-				break;
-			case 'boolean':
-				obj['booleanValue'] = variable;
-				break;
-		}
+	function createNewProperty(obj, variable) {
+		const varType = typeof variable;
+
+		obj[`${varType}Value`] = variable;
 
 		return obj;
 	}
