@@ -9,10 +9,10 @@
 Создай функцию, которая будет возвращать объект с таким количеством пустых свойств, которое мы будем ей передавать.
 Все свойства должны быть названы и пронумерованы подобным образом: "prop-1", "prop-2" ...
 <script>
-	function getNewOnj(num) {
+	function getObjWithEmptyProperties (rowQuantity) {
 		const newObj = {};
 
-		for (let i = 1; i <= num; i++) {
+		for (let i = 1; i <= rowQuantity; i++) {
 			newObj[`prop-${i}`] = null;
 		}
 
