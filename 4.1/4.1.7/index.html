@@ -50,13 +50,13 @@
 
 	function showMessage(obj) {
 		if (obj) {
-			let variable = '';
+			let message = '';
 
 			for (let key in obj) {
-				variable += (variable) ? `${key} - ${obj[key]}` : `${key} - ${obj[key]}. `;
+				message += (message) ? `${key} - ${obj[key]}` : `${key} - ${obj[key]}. `;
 			}
 
-			alert(variable);
+			alert(message);
 		} else {
 			alert('Ошибка в объекте с именами');
 		}
@@ -70,7 +70,6 @@
 		'Миша': 9,
 	}
 
-	console.log(getNewObj(obj));
 	showMessage(getNewObj(obj))
 </script>
 </body>
