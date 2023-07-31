@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 4.1.13
+Создать функцию, которая принимает 2 значения: объект и любой тип данных. Она проверяет какой тип у
+второго значения, добавляет в переданный объект новое свойство с соответствующим названием и присваивает ему
+это значение.
+Например, мы в эту функцию передали вторым значением true, тогда функцию вернут переданный объект
+с новым свойством booleanValue: true.
+<script>
+	function createNewProperty(obj, variable) {
+		const varType = typeof variable;
+
+		obj[`${varType}Value`] = variable;
+
+		return obj;
+	}
+</script>
+</body>
+</html>
