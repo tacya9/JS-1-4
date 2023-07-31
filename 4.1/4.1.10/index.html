@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 4.1.10
+Придумать глобальный объект, у которого будут несколько свойств со значениями разных типов - число, строка,
+булевый,
+объект. А у внутреннего объекта тоже будут несколько свойств со значениями разных типов - число, строка, булевый и
+пустой объект. Потом необходимо вывести значение каждого свойства внутреннего объекта отдельными console.log в формате
+propName: value(разными функциями console.log) без цикла.
+<script>
+	const globalObj = {
+		number: 123,
+		string: 'hi',
+		boolean: true,
+		localObj: {
+			number: 321,
+			string: 'bye',
+			boolean: false,
+			emptyObj: {}
+		}
+	}
+
+	console.log(`number: ${globalObj.localObj.number}`);
+	console.log(`string: ${globalObj.localObj.string}`);
+	console.log(`boolean: ${globalObj.localObj.boolean}`);
+	console.log(`emptyObj: ${globalObj.localObj.emptyObj}`);
+</script>
+</body>
+</html>
