@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 4.4.1
+Создайте объект calculator (калькулятор) с тремя методами:
+
+read() (читать) запрашивает два числовых значения и сохраняет их в свойства (придумать название этим свойствам)
+текущего объекта.
+sum() (суммировать) возвращает сумму сохранённых значений.
+mul() (умножить) перемножает сохранённые значения и возвращает результат.
+А потом воспользоваться этим объектом, чтобы в консоль вывести сумму и произведение введенных числовых значение в
+формате:
+'Введенные числа: 5 и 6. Сумма - 11. Произведение - 30.'
+<script>
+	const calculator = {
+		'first-number': null,
+		'second-number': null,
+		read() {
+			this['first-number'] = +prompt('Введите число');
+			this['second-number'] = +prompt('Введите число');
+		},
+		sum() {
+			return this['first-number'] + this['second-number'];
+		},
+		mul() {
+			return this['first-number'] * this['second-number'];
+		}
+	}
+
+	calculator.read();
+	calculator.sum();
+	calculator.mul();
+	console.log(`Введенные числа: ${calculator['first-number']} и ${calculator['second-number']}. Сумма - ${calculator.sum()}. Произведение - ${calculator.mul()}.`);
+</script>
+</body>
+</html>
