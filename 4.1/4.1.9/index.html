@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 4.1.9
+Создай функцию, которая будет возвращать объект с таким количеством пустых свойств, которое мы будем ей передавать.
+Все свойства должны быть названы и пронумерованы подобным образом: "prop-1", "prop-2" ...
+<script>
+	function getObjWithEmptyProperties(propertiesQty) {
+		const newObj = {};
+
+		for (let i = 1; i <= propertiesQty ; i++) {
+			newObj[`prop-${i}`] = null;
+		}
+
+		return newObj;
+	}
+</script>
+</body>
+</html>
