@@ -27,25 +27,26 @@
 <script>
 	function getNewObj(obj) {
 		const adults = 'Взрослые';
-
-		let peopleAgeObj = {
+		const peopleAgeObj = {
 			'Дети': '', // first approach
 			[adults]: '' // second approach
 		};
 
+		let hasError = false;
+
 		for (let key in obj) {
-			if (typeof obj[key] === 'number') {
+			if (!hasError && typeof obj[key] === 'number') {
 				if (obj[key] >= 18) {
 					peopleAgeObj[adults] += (peopleAgeObj[adults]) ? `, ${key}` : key;
 				} else {
 					peopleAgeObj['Дети'] += (peopleAgeObj['Дети']) ? `, ${key}` : key;
 				}
 			} else {
-				peopleAgeObj = false;
+				hasError = true;
 			}
 		}
 
-		return (peopleAgeObj[adults]) ? peopleAgeObj : false;
+		return (hasError) ? false : peopleAgeObj;
 	}
 
 	function showMessage(obj) {
