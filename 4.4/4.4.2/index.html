@@ -7,7 +7,7 @@
 <body>
 ### 4.4.2
 У нас есть объект ladder (лестница), который позволяет подниматься и спускаться:
-let ladder = {
+const ladder = {
 	step: 0,
 	up() {
 		this.step++;
@@ -33,7 +33,7 @@ ladder.up().up().down().showStep().down().showStep(); // показывает 1 
 
 Такой подход широко используется в библиотеках JavaScript.
 <script>
-	let ladder = {
+	const ladder = {
 		step: 0,
 		up() {
 			this.step++;
