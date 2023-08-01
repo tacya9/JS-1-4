@@ -10,8 +10,9 @@
 свойствами: арифметическая и геометрическая прогрессия переданного числа
 <script>
 	function getArithmeticProgression(num) {
-		let sum = 0;
 		const number = Math.abs(num);
+
+		let sum = 0;
 
 		for (let i = 1; i <= number; i++) {
 			sum += i;
@@ -21,8 +22,9 @@
 	}
 
 	function getGeometricProgression(num) {
-		let sum = 1;
 		const number = Math.abs(num);
+
+		let sum = 1;
 
 		for (let i = 1; i <= number; i++) {
 			sum *= i;
@@ -35,8 +37,8 @@
 
 	function getObj(num) {
 		const objNumber = {
-			'arithmeticProgression': getArithmeticProgression(num),
-			'geometricProgression': getGeometricProgression(num)
+			arithmeticProgression: getArithmeticProgression(num),
+			geometricProgression: getGeometricProgression(num)
 		}
 
 		return objNumber;
