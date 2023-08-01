@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 4.4.3
+Создать объект случайного числа. У него будет одно свойство, где будет сохраняться случайное целое число от -50 до 50. А
+также 2 метода:
+1) метод будет генерировать случайное число и записывать у себя в свойство обьекта.
+2) метод будет показывать алерт с сообщением: "Случайное число: Х". Сгенерированное значение необходимо брать у свойства
+своего же объекта.
+<script>
+	const randomNumberObject = {
+		randomNumber: null,
+		createRandomNum() {
+			this.randomNumber = Math.floor((Math.random() * 100) - 50);
+		},
+		showMessage() {
+			alert(`Случайное число: ${this.randomNumber}`)
+		}
+	}
+</script>
+</body>
+</html>
