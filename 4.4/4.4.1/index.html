@@ -17,24 +17,22 @@ mul() (умножить) перемножает сохранённые знач�
 'Введенные числа: 5 и 6. Сумма - 11. Произведение - 30.'
 <script>
 	const calculator = {
-		'first-number': null,
-		'second-number': null,
+		firstNumber: null,
+		secondNumber: null,
 		read() {
-			this['first-number'] = +prompt('Введите число');
-			this['second-number'] = +prompt('Введите число');
+			this.firstNumber = +prompt('Введите число');
+			this.secondNumber = +prompt('Введите число');
 		},
 		sum() {
-			return this['first-number'] + this['second-number'];
+			return this.firstNumber + this.secondNumber;
 		},
 		mul() {
-			return this['first-number'] * this['second-number'];
+			return this.firstNumber * this.secondNumber;
 		}
 	}
 
 	calculator.read();
-	calculator.sum();
-	calculator.mul();
-	console.log(`Введенные числа: ${calculator['first-number']} и ${calculator['second-number']}. Сумма - ${calculator.sum()}. Произведение - ${calculator.mul()}.`);
+	console.log(`Введенные числа: ${calculator.firstNumber} и ${calculator.secondNumber}. Сумма - ${calculator.sum()}. Произведение - ${calculator.mul()}.`);
 </script>
 </body>
 </html>
