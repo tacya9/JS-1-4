@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 4.1.5
+создать функцию, которая принимает число и возвращает объект с двумя
+свойствами: арифметическая и геометрическая прогрессия переданного числа
+<script>
+	function getArithmeticProgression(num) {
+		const number = Math.abs(num);
+		let sum = 0;
+
+		for (let i = 1; i <= number; i++) {
+			sum += i;
+		}
+
+		return (num > 0) ? sum : -sum;
+	}
+
+	function getGeometricProgression(num) {
+		const number = Math.abs(num);
+
+		let sum = 1;
+
+		for (let i = 1; i <= number; i++) {
+			sum *= i;
+		}
+
+		sum = (num > 0 || (num < 0 && num % 2 === 0)) ? sum : -sum;
+
+		return sum;
+	}
+
+	function getObj(num) {
+		const objNumber = {
+			arithmeticProgression: getArithmeticProgression(num),
+			geometricProgression: getGeometricProgression(num)
+		}
+
+		return objNumber;
+	}
+</script>
+</body>
+</html>
