@@ -10,17 +10,18 @@
 Появляется вопрос: "Введите любое число".
 Потом появляется алерт с сообщением: "Х - [четное; нечетное] число"
 <script>
-	const newObj = {
+	const infoNumObj = {
+		number: null,
 		getNum() {
 			this.number = +prompt('Введите любое число');
 		},
-		getEvenOrOddNum() {
-			const value = (this.number % 2 === 0) ? 'четное' : 'нечетное';
+		checkEvenOrOddNum () {
+			const evenOrOdd = (this.number % 2 === 0) ? 'четное' : 'нечетное';
 
-			return value;
+			return evenOrOdd;
 		},
 		showMessage() {
-			alert(`${this.number} - ${this.getEvenOrOddNum()} число`);
+			alert(`${this.number} - ${this.checkEvenOrOddNum ()} число`);
 		}
 	}
 </script>
