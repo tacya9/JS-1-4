@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 4.4.5
+Создать объект со следующей логикой:
+Появляется алерт с сообщением:
+"Космос получил информацию о вас. Вы - человек [приятно; пузыристо; утончённо; извилисто]-
+[глазастый, ушастый, волосастый, щекастый] [горбунёк, снусмумрик, супермэн, кракен]"
+Значения из квадратных скобок выбираются случайно.
+<script>
+	const infoObj = {
+		randomNum: null,
+		variableValue: null,
+		createRandomNum() {
+			this.randomNum = Math.random();
+
+			return this.randomNum;
+		},
+		createInfo1(num) {
+			if (this.randomNum >= 0 && this.randomNum <= 0.25) {
+				this.variableValue = 'приятно';
+			} else if (this.randomNum > 0.25 && this.randomNum <= 0.5) {
+				this.variableValue = 'пузыристо';
+			} else if (this.randomNum > 0.5 && this.randomNum <= 0.75) {
+				this.variableValue = 'утончённо';
+			} else {
+				this.variableValue = 'извилисто';
+			}
+
+			return this.variableValue;
+		},
+		createInfo2(num) {
+			if (this.randomNum >= 0 && this.randomNum <= 0.25) {
+				this.variableValue = 'глазастый';
+			} else if (this.randomNum > 0.25 && this.randomNum <= 0.5) {
+				this.variableValue = 'ушастый';
+			} else if (this.randomNum > 0.5 && this.randomNum <= 0.75) {
+				this.variableValue = 'волосастый';
+			} else {
+				this.variableValue = 'щекастый';
+			}
+
+			return this.variableValue;
+		},
+		createInfo3(num) {
+			if (this.randomNum >= 0 && this.randomNum <= 0.25) {
+				this.variableValue = 'горбунёк';
+			} else if (this.randomNum > 0.25 && this.randomNum <= 0.5) {
+				this.variableValue = 'снусмумрик';
+			} else if (this.randomNum > 0.5 && this.randomNum <= 0.75) {
+				this.variableValue = 'супермэн';
+			} else {
+				this.variableValue = 'кракен';
+			}
+
+			return this.variableValue;
+		},
+		showMessage() {
+			alert(`Космос получил информацию о вас. Вы - человек ${this.createInfo1(this.createRandomNum(this.randomNum))}-${this.createInfo2(this.createRandomNum(this.randomNum))} ${this.createInfo3(this.createRandomNum(this.randomNum))}`);
+		}
+	}
+
+	console.log(infoObj.showMessage())
+</script>
+</body>
+</html>
