@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 4.4.8
+Создать объект, внутри которого будет изначально пустой объект, а дальше будем его наполнять новыми пустыми свойствами
+со
+следующей логикой:
+Появляется сообщение: "Введите название нового свойства"
+Если юзер вводит название и нажимает ОК - добавляется новое свойство к внутреннему новому отдельному объекту и
+потом снова появляется сообщение с предложением ввести название свойства.
+Если нажимает ОТМЕНА - выводится только алерт с перечнем всех свойств (которые добавлял юзер) этого отдельного
+внутреннего объекта, таким образом: "{ prop1, prop2, prop3, ...., }".
+<script>
+	const obj = {
+		newUserObj: {},
+		getNewProperty() {
+			let isContinue = false;
+
+			while (!isContinue) {
+				const property = prompt('Введите название нового свойства');
+
+				if (property === null) {
+					isContinue = true;
+				} else {
+					this.newUserObj[property] = null;
+				}
+			}
+
+			return this.newUserObj;
+		},
+		showMessage() {
+			let text = '';
+
+			this.getNewProperty();
+
+			for (let key in this.newUserObj) {
+				text += (text) ? ', ' + key : key;
+			}
+
+			alert(`{ ${text} }`);
+		}
+	}
+</script>
+</body>
+</html>
