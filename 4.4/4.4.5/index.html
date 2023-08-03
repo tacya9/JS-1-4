@@ -16,55 +16,68 @@
 		randomNum: null,
 		variableValue: null,
 		createRandomNum() {
-			this.randomNum = Math.random();
+			this.randomNum = Math.round((Math.random() * 3) + 1);
 
 			return this.randomNum;
 		},
-		createInfo1(num) {
-			if (this.randomNum >= 0 && this.randomNum <= 0.25) {
-				this.variableValue = 'приятно';
-			} else if (this.randomNum > 0.25 && this.randomNum <= 0.5) {
-				this.variableValue = 'пузыристо';
-			} else if (this.randomNum > 0.5 && this.randomNum <= 0.75) {
-				this.variableValue = 'утончённо';
-			} else {
-				this.variableValue = 'извилисто';
+		getInfo1() {
+			switch (this.createRandomNum()) {
+				case 1:
+					this.variableValue = 'приятно';
+					break;
+				case 2:
+					this.variableValue = 'пузыристо';
+					break;
+				case 3:
+					this.variableValue = 'утончённо';
+					break;
+				case 4:
+					this.variableValue = 'извилисто';
+					break;
 			}
 
 			return this.variableValue;
 		},
-		createInfo2(num) {
-			if (this.randomNum >= 0 && this.randomNum <= 0.25) {
-				this.variableValue = 'глазастый';
-			} else if (this.randomNum > 0.25 && this.randomNum <= 0.5) {
-				this.variableValue = 'ушастый';
-			} else if (this.randomNum > 0.5 && this.randomNum <= 0.75) {
-				this.variableValue = 'волосастый';
-			} else {
-				this.variableValue = 'щекастый';
+		getInfo2() {
+			switch (this.createRandomNum()) {
+				case 1:
+					this.variableValue = 'глазастый';
+					break;
+				case 2:
+					this.variableValue = 'ушастый';
+					break;
+				case 3:
+					this.variableValue = 'волосастый';
+					break;
+				case 4:
+					this.variableValue = 'щекастый';
+					break;
 			}
 
 			return this.variableValue;
 		},
-		createInfo3(num) {
-			if (this.randomNum >= 0 && this.randomNum <= 0.25) {
-				this.variableValue = 'горбунёк';
-			} else if (this.randomNum > 0.25 && this.randomNum <= 0.5) {
-				this.variableValue = 'снусмумрик';
-			} else if (this.randomNum > 0.5 && this.randomNum <= 0.75) {
-				this.variableValue = 'супермэн';
-			} else {
-				this.variableValue = 'кракен';
+		getInfo3() {
+			switch (this.createRandomNum()) {
+				case 1:
+					this.variableValue = 'горбунёк';
+					break;
+				case 2:
+					this.variableValue = 'снусмумрик';
+					break;
+				case 3:
+					this.variableValue = 'супермэн';
+					break;
+				case 4:
+					this.variableValue = 'кракен';
+					break;
 			}
 
 			return this.variableValue;
 		},
 		showMessage() {
-			alert(`Космос получил информацию о вас. Вы - человек ${this.createInfo1(this.createRandomNum(this.randomNum))}-${this.createInfo2(this.createRandomNum(this.randomNum))} ${this.createInfo3(this.createRandomNum(this.randomNum))}`);
+			alert(`Космос получил информацию о вас. Вы - человек ${this.getInfo1()}-${this.getInfo2()} ${this.getInfo3()}`);
 		}
 	}
-
-	console.log(infoObj.showMessage())
 </script>
 </body>
 </html>
