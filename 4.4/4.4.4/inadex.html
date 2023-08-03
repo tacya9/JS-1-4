@@ -15,13 +15,13 @@
 		getNum() {
 			this.number = +prompt('Введите любое число');
 		},
-		checkEvenOrOddNum () {
+		getEvenOrOddText  () {
 			const evenOrOdd = (this.number % 2 === 0) ? 'четное' : 'нечетное';
 
 			return evenOrOdd;
 		},
 		showMessage() {
-			alert(`${this.number} - ${this.checkEvenOrOddNum ()} число`);
+			alert(`${this.number} - ${this.getEvenOrOddText  ()} число`);
 		}
 	}
 </script>
