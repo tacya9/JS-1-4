@@ -15,24 +15,24 @@
 <script>
 	const userTextObj = {
 		text: '',
-		isStart: true,
-		checkInfo() {
-			this.text += prompt('Введите любой текст (он будет накапливаться)');
+		isContinue : true,
+		accumulateInfo() {
 			this.text += (this.text) ? ' ' : this.text;
-			this.isStart = confirm(`Накопленный текст: "${this.text}". Хотите еще добавить?`);
-
-			return this.isStart;
+			this.text += prompt('Введите любой текст (он будет накапливаться)');
+			this.isContinue  = confirm(`Накопленный текст: "${this.text}". Хотите еще добавить?`);
 		},
 		createUserText() {
-			while (this.isStart) {
-				this.checkInfo();
+			while (this.isContinue ) {
+				this.accumulateInfo();
 			}
 
-			if (!this.isStart) {
+			if (!this.isContinue ) {
 				alert(`Накопленный текст: "${this.text}"`);
 			}
 		}
 	}
+
+	console.log(userTextObj.createUserText())
 </script>
 </body>
 </html>
