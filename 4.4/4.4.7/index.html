@@ -12,12 +12,11 @@
 Но если юзер написал неправильно, тогда должен выскочить алерт: "Такого числа не существует!"
 <script>
 	const numObj = {
-		text: null,
 		number: null,
 		getNumber() {
-			this.text = prompt('Напишите число от 0 до 9 буквами');
+			const text = prompt('Напишите число от 0 до 9 буквами');
 
-			switch (this.text) {
+			switch (text) {
 				case 'ноль':
 					this.number = 0;
 					break;
@@ -53,7 +52,7 @@
 		showMessage() {
 			this.getNumber();
 
-			if (typeof this.number === "number") {
+			if (this.number) {
 				alert(`Вы указали число - ${this.number}`);
 			} else {
 				alert('Такого числа не существует!');
