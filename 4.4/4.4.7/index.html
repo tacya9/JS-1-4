@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 4.4.7
+Создать объект со следующей логикой:
+Появляется вопрос: "Напишите число от 0 до 9 буквами"
+А потом выводится алерт: "Вы указали число - Х" (Х - цифра)
+Но если юзер написал неправильно, тогда должен выскочить алерт: "Такого числа не существует!"
+<script>
+	const numObj = {
+		number: null,
+		getNumber() {
+			const text = prompt('Напишите число от 0 до 9 буквами');
+
+			switch (text) {
+				case 'ноль':
+					this.number = 0;
+					break;
+				case 'один':
+					this.number = 1;
+					break;
+				case 'два':
+					this.number = 2;
+					break;
+				case 'три':
+					this.number = 3;
+					break;
+				case 'четыре':
+					this.number = 4;
+					break;
+				case 'пять':
+					this.number = 5;
+					break;
+				case 'шесть':
+					this.number = 6;
+					break;
+				case 'семь':
+					this.number = 7;
+					break;
+				case 'восемь':
+					this.number = 8;
+					break;
+				case 'девять':
+					this.number = 9;
+					break;
+			}
+		},
+		showMessage() {
+			this.getNumber();
+
+			if (this.number) {
+				alert(`Вы указали число - ${this.number}`);
+			} else {
+				alert('Такого числа не существует!');
+			}
+		}
+	}
+</script>
+</body>
+</html>
