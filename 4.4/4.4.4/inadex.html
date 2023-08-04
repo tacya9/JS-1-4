@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 4.4.4
+Создать объект со следующей логикой:
+Появляется вопрос: "Введите любое число".
+Потом появляется алерт с сообщением: "Х - [четное; нечетное] число"
+<script>
+	const infoNumObj = {
+		number: null,
+		getNum() {
+			this.number = +prompt('Введите любое число');
+		},
+		getEvenOrOddText  () {
+			const evenOrOdd = (this.number % 2 === 0) ? 'четное' : 'нечетное';
+
+			return evenOrOdd;
+		},
+		showMessage() {
+			alert(`${this.number} - ${this.getEvenOrOddText  ()} число`);
+		}
+	}
+</script>
+</body>
+</html>
