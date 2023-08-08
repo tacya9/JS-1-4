@@ -18,19 +18,17 @@
 	const obj = {
 		newUserObj: {},
 		getNewProperty() {
-			let isContinue = false;
+			let isStart = true;
 
-			while (!isContinue) {
-				const property = prompt('Введите название нового свойства');
+			while (isStart) {
+				const propertyName = prompt('Введите название нового свойства');
 
-				if (property === null) {
-					isContinue = true;
+				if (propertyName) {
+					this.newUserObj[propertyName] = null;
 				} else {
-					this.newUserObj[property] = null;
+					isStart = false;
 				}
 			}
-
-			return this.newUserObj;
 		},
 		showMessage() {
 			let text = '';
@@ -44,6 +42,8 @@
 			alert(`{ ${text} }`);
 		}
 	}
+
+	obj.showMessage()
 </script>
 </body>
 </html>
