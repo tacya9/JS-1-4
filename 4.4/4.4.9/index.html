@@ -15,16 +15,16 @@
 <script>
 	const obj = {
 		info: '',
-		num: 0,
+		messageNum: 0,
 		createUserMessage() {
 			const userText = prompt('Введите новое сообщение');
 
-			this.num = this.num + 1;
+			this.messageNum++;
 
-			if (userText === null) {
-				this.info += ' ' + this.num + ') ' + '---';
+			if (userText) {
+				this.info += ` ${this.messageNum}) ${userText}`;
 			} else {
-				this.info += ' ' + this.num + ') ' + userText;
+				this.info += ` ${this.messageNum}) ---`;
 			}
 		}
 	}
