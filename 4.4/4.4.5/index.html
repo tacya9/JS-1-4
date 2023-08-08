@@ -11,68 +11,74 @@
 "Космос получил информацию о вас. Вы - человек [приятно; пузыристо; утончённо; извилисто]-
 [глазастый, ушастый, волосастый, щекастый] [горбунёк, снусмумрик, супермэн, кракен]"
 Значения из квадратных скобок выбираются случайно.
+Это задание сделать без использования массивов т.к. эта тема еще не пройдена
 <script>
 	const infoObj = {
 		randomNum: null,
-		variableValue: null,
-		createRandomNum() {
+		getRandomNum() {
 			this.randomNum = Math.round((Math.random() * 3) + 1);
 
 			return this.randomNum;
 		},
 		getInfo1() {
-			switch (this.createRandomNum()) {
+			let variableValue = '';
+
+			switch (this.getRandomNum()) {
 				case 1:
-					this.variableValue = 'приятно';
+					variableValue = 'приятно';
 					break;
 				case 2:
-					this.variableValue = 'пузыристо';
+					variableValue = 'пузыристо';
 					break;
 				case 3:
-					this.variableValue = 'утончённо';
+					variableValue = 'утончённо';
 					break;
 				case 4:
-					this.variableValue = 'извилисто';
+					variableValue = 'извилисто';
 					break;
 			}
 
-			return this.variableValue;
+			return variableValue;
 		},
 		getInfo2() {
-			switch (this.createRandomNum()) {
+			let variableValue = '';
+
+			switch (this.getRandomNum()) {
 				case 1:
-					this.variableValue = 'глазастый';
+					variableValue = 'глазастый';
 					break;
 				case 2:
-					this.variableValue = 'ушастый';
+					variableValue = 'ушастый';
 					break;
 				case 3:
-					this.variableValue = 'волосастый';
+					variableValue = 'волосастый';
 					break;
 				case 4:
-					this.variableValue = 'щекастый';
+					variableValue = 'щекастый';
 					break;
 			}
 
-			return this.variableValue;
+			return variableValue;
 		},
 		getInfo3() {
-			switch (this.createRandomNum()) {
+			let variableValue = '';
+
+			switch (this.getRandomNum()) {
 				case 1:
-					this.variableValue = 'горбунёк';
+					variableValue = 'горбунёк';
 					break;
 				case 2:
-					this.variableValue = 'снусмумрик';
+					variableValue = 'снусмумрик';
 					break;
 				case 3:
-					this.variableValue = 'супермэн';
+					variableValue = 'супермэн';
 					break;
 				case 4:
-					this.variableValue = 'кракен';
+					variableValue = 'кракен';
 					break;
 			}
 
-			return this.variableValue;
+			return variableValue;
 		},
 		showMessage() {
 			alert(`Космос получил информацию о вас. Вы - человек ${this.getInfo1()}-${this.getInfo2()} ${this.getInfo3()}`);
