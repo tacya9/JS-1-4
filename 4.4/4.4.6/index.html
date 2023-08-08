@@ -17,7 +17,7 @@
 		text: '',
 		isContinue : true,
 		accumulateInfo() {
-			this.text += (this.text) ? ' ' : this.text;
+			this.text += (this.text) ? ' ' : null;
 			this.text += prompt('Введите любой текст (он будет накапливаться)');
 			this.isContinue  = confirm(`Накопленный текст: "${this.text}". Хотите еще добавить?`);
 		},
