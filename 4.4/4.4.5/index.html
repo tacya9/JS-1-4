@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 4.4.5
+Создать объект со следующей логикой:
+Появляется алерт с сообщением:
+"Космос получил информацию о вас. Вы - человек [приятно; пузыристо; утончённо; извилисто]-
+[глазастый, ушастый, волосастый, щекастый] [горбунёк, снусмумрик, супермэн, кракен]"
+Значения из квадратных скобок выбираются случайно.
+Это задание сделать без использования массивов т.к. эта тема еще не пройдена
+<script>
+	const infoObj = {
+		randomNum: null,
+		getRandomNum() {
+			this.randomNum = Math.round((Math.random() * 3) + 1);
+
+			return this.randomNum;
+		},
+		getFirstHumanFeature() {
+			let humanFeature = '';
+
+			switch (this.getRandomNum()) {
+				case 1:
+					humanFeature = 'приятно';
+					break;
+				case 2:
+					humanFeature = 'пузыристо';
+					break;
+				case 3:
+					humanFeature = 'утончённо';
+					break;
+				case 4:
+					humanFeature = 'извилисто';
+					break;
+			}
+
+			return humanFeature;
+		},
+		getSecondHumanFeature() {
+			let humanFeature = '';
+
+			switch (this.getRandomNum()) {
+				case 1:
+					humanFeature = 'глазастый';
+					break;
+				case 2:
+					humanFeature = 'ушастый';
+					break;
+				case 3:
+					humanFeature = 'волосастый';
+					break;
+				case 4:
+					humanFeature = 'щекастый';
+					break;
+			}
+
+			return humanFeature;
+		},
+		getHumanType() {
+			let humanType = '';
+
+			switch (this.getRandomNum()) {
+				case 1:
+					humanType = 'горбунёк';
+					break;
+				case 2:
+					humanType = 'снусмумрик';
+					break;
+				case 3:
+					humanType = 'супермэн';
+					break;
+				case 4:
+					humanType = 'кракен';
+					break;
+			}
+
+			return humanType;
+		},
+		showMessage() {
+			alert(`Космос получил информацию о вас. Вы - человек ${this.getFirstHumanFeature()}-${this.getSecondHumanFeature()} ${this.getHumanType()}`);
+		}
+	}
+</script>
+</body>
+</html>
