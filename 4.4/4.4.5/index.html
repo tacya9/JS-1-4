@@ -20,68 +20,68 @@
 
 			return this.randomNum;
 		},
-		getInfo1() {
-			let variableValue = '';
+		getFirstHumanFeature() {
+			let humanFeature = '';
 
 			switch (this.getRandomNum()) {
 				case 1:
-					variableValue = 'приятно';
+					humanFeature = 'приятно';
 					break;
 				case 2:
-					variableValue = 'пузыристо';
+					humanFeature = 'пузыристо';
 					break;
 				case 3:
-					variableValue = 'утончённо';
+					humanFeature = 'утончённо';
 					break;
 				case 4:
-					variableValue = 'извилисто';
+					humanFeature = 'извилисто';
 					break;
 			}
 
-			return variableValue;
+			return humanFeature;
 		},
-		getInfo2() {
-			let variableValue = '';
+		getSecondHumanFeature() {
+			let humanFeature = '';
 
 			switch (this.getRandomNum()) {
 				case 1:
-					variableValue = 'глазастый';
+					humanFeature = 'глазастый';
 					break;
 				case 2:
-					variableValue = 'ушастый';
+					humanFeature = 'ушастый';
 					break;
 				case 3:
-					variableValue = 'волосастый';
+					humanFeature = 'волосастый';
 					break;
 				case 4:
-					variableValue = 'щекастый';
+					humanFeature = 'щекастый';
 					break;
 			}
 
-			return variableValue;
+			return humanFeature;
 		},
-		getInfo3() {
-			let variableValue = '';
+		getHumanType() {
+			let humanType = '';
 
 			switch (this.getRandomNum()) {
 				case 1:
-					variableValue = 'горбунёк';
+					humanType = 'горбунёк';
 					break;
 				case 2:
-					variableValue = 'снусмумрик';
+					humanType = 'снусмумрик';
 					break;
 				case 3:
-					variableValue = 'супермэн';
+					humanType = 'супермэн';
 					break;
 				case 4:
-					variableValue = 'кракен';
+					humanType = 'кракен';
 					break;
 			}
 
-			return variableValue;
+			return humanType;
 		},
 		showMessage() {
-			alert(`Космос получил информацию о вас. Вы - человек ${this.getInfo1()}-${this.getInfo2()} ${this.getInfo3()}`);
+			alert(`Космос получил информацию о вас. Вы - человек ${this.getFirstHumanFeature()}-${this.getSecondHumanFeature()} ${this.getHumanType()}`);
 		}
 	}
 </script>
