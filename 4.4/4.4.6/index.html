@@ -15,16 +15,17 @@
 <script>
 	const userTextObj = {
 		text: '',
-		isContinue: true,
 		accumulateInfo() {
-			this.text += (this.text) ? ' ' : null;
-			this.text += prompt('Введите любой текст (он будет накапливаться)');
-			this.isContinue = confirm(`Накопленный текст: "${this.text}". Хотите еще добавить?`);
+			let isContinue = true;
+
+			while (isContinue) {
+				this.text += (this.text) ? ' ' : null;
+				this.text += prompt('Введите любой текст (он будет накапливаться)');
+				isContinue = confirm(`Накопленный текст: "${this.text}". Хотите еще добавить?`);
+			}
 		},
 		createUserText() {
-			while (this.isContinue) {
-				this.accumulateInfo();
-			}
+			this.accumulateInfo();
 
 			alert(`Накопленный текст: "${this.text}"`);
 		}
