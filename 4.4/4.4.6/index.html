@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 4.4.6
+Создать объект со следующей логикой:
+Появляется сообщение: "Введите любой текст (он будет накапливаться)"
+Потом появляется конферм: "Накопленный текст: "[... ... ...]". Хотите еще добавить?"
+Когда пользователь нажмет ОК - начинается всё сначала, появляется первое сообщение.
+Если нажимает ОТМЕНА - всё заканчивается и выводится просто алерт: "Накопленный текст: "[... ... ...]""
+Каждый новый добавленнный текст отделяется от предыдущего с помощью пробела.
+<script>
+	const userTextObj = {
+		text: '',
+		accumulateInfo() {
+			let isContinue = true;
+
+			while (isContinue) {
+				this.text += (this.text) ? ' ' : null;
+				this.text += prompt('Введите любой текст (он будет накапливаться)');
+				isContinue = confirm(`Накопленный текст: "${this.text}". Хотите еще добавить?`);
+			}
+		},
+		createUserText() {
+			this.accumulateInfo();
+
+			alert(`Накопленный текст: "${this.text}"`);
+		}
+	}
+
+	console.log(userTextObj.createUserText())
+</script>
+</body>
+</html>
