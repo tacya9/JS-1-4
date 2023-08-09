@@ -18,15 +18,15 @@
 	const obj = {
 		newUserObj: {},
 		getNewProperty() {
-			let isStart = true;
+			let isContinue = true;
 
-			while (isStart) {
+			while (isContinue) {
 				const propertyName = prompt('Введите название нового свойства');
 
 				if (propertyName) {
 					this.newUserObj[propertyName] = null;
 				} else {
-					isStart = false;
+					isContinue = false;
 				}
 			}
 		},
