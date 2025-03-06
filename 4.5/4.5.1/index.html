@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+### 4.5.1
+Создайте функцию-конструктор Calculator, которая создаёт объекты с тремя методами:
+
+read() запрашивает два значения при помощи prompt и сохраняет их значение в свойствах объекта.
+sum() возвращает сумму этих свойств.
+mul() возвращает произведение этих свойств.
+Например:
+
+const calculator = new Calculator();
+calculator.read();
+
+alert( "Sum=" + calculator.sum() );
+alert( "Mul=" + calculator.mul() );
+<script>
+	function Calculator() {
+		this.read = function () {
+			this.firstNumber = prompt('Введите число');
+			this.secondNumber = prompt('Введите число');
+		};
+
+		this.sum = function () {
+			return Number(this.firstNumber) + Number(this.secondNumber);
+		};
+
+		this.mul = function () {
+			return this.firstNumber * this.secondNumber
+		}
+	}
+
+	const calculator = new Calculator();
+
+	calculator.read();
+
+	alert("Sum=" + calculator.sum());
+	alert("Mul=" + calculator.mul());
+</script>
+</body>
+</html>
